@@ -1,1 +1,50 @@
-pagina html di homepage per vedere le offerte di lavoro
+<% include ../partials/header %>
+    
+
+<div class="container">
+    <header class="jumbotron">
+        <div class="container">
+            <h1>Welcome to alumniUNITN!</h1>
+            <p>Qui puoi trovare tutti gli alumni UNITN che offrono opportunità lavorative</p>
+            <div class="adding">
+                <a class="btn btn-primary btn-lg" href="/offerteLavoro/new">Sei in cerca di nuove esperienze lavorative? Inserisci la tua candidatura</a>
+            </div>
+            <p>
+                <form action="/richieste" method="GET" class="form-inline">
+                    <div class="form-group">
+                        <input type="text" name="searchAzienda" placeholder="Azienda..." class="form-control">
+                        <input type="text" name="searchLuogo" placeholder="Luogo..." class="form-control">
+                        <input type="submit" value="Search" class="btn btn-default">
+                    </div>
+                </form>
+            </p>
+        </div>
+    </header>
+    
+    
+
+    <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+        
+        <% offerteLavoro.forEach(function(offertaLavoro){ %>
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail">
+                <img src="<%= offertaLavoro.fotoAzienda%>">
+                    <div>
+                        <h4> <%=offertaLavoro.nome %> <%=offertaLavoro.cognome %> </h4>
+                    </div>
+                    <div>
+                        <h5> <%=offertaLavoro.descrizionePosizione %> </h5>
+                    </div>
+                    <div>
+                        <h6> <%=offertaLavoro.luogo %> </h6>
+                    </div>
+                    <p>
+                        <a href="/richiesteLavoro/<%= offertaLavoro._id %>" class="btn btn-primary">More Info</a>    
+                    </p>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+<% include ../partials/footer %>

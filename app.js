@@ -44,6 +44,7 @@ app.set("view engine", "ejs");
 
 var authRoutes = require("./routes/index");
 var richiesteRoutes = require("./routes/richiesteLavoro");
+var offerteRoutes = require("./routes/offerteLavoro");
 
 var RichiestaLavoro = require("./models/richiestaLavoro.js")
 var OffertaLavoro = require("./models/offertaLavoro.js")
@@ -81,13 +82,45 @@ RichiestaLavoro.create(
         }
 });
 
+
+OffertaLavoro.create(
+    {   
+            nome: "Lucia",
+            cognome: "Bisesti",
+            foto: "http://donnabennett.ca/images/donna_cv.jpg",
+            corsoLaurea: "Economia",
+            annoLaurea: "2012",
+            professione: "Head of HR",
+            contattoMail: "bisesti@gmail.com",
+            contattoTelegram: "@bisestiMe",
+            nomeAzienda: "Ferrero",
+            descrizionePosizione: "Social Media Manager",
+            fotoAzienda: "https://www.mixerplanet.com/wp-content/uploads/2017/09/ferrero.jpg",
+            tipoContratto: "Tempo determinato 1 anno",
+            salario: "45K-55K",
+            periodo: "Novembre 2018 - Novembre 2019",
+            luogo: "Padova"
+            
+    }, function(err, offertaLavoro){
+        if (err){
+            console.log(err);
+        } else {
+            console.log("Newly created offertaLavoro: ");
+            console.log(offertaLavoro)
+        }
+});
+
+
+
+app.use(authRoutes);
+app.use(richiesteRoutes);
+app.use(offerteRoutes);
+
 app.listen(3000, function () {
   console.log('alumniUNITN listening on port 3000!');
 });
 
 
-app.use(authRoutes);
-app.use(richiesteRoutes);
 
 
 /*
