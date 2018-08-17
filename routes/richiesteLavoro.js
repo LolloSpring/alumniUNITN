@@ -1,8 +1,21 @@
+var express = require("express");
+var router = express.Router();
+var RichiestaLavoro = require("../models/richiestaLavoro");
+
+
 // INDEX
 
-router.get("/richieste");
+router.get("/richieste/", function(req, res){
+	RichiestaLavoro.find({}, function(err, allRichiesteLavoro){
+		if(err){
+			console.log(err);
+		} else {
+			res.render("./richiesteLavoro/index", {richiesteLavoro: allRichiesteLavoro});
+		}
+	});
+});
 
-
+/*
 // NEW RICHIESTA
 
 router.get("/richieste/new");
@@ -31,3 +44,7 @@ router.put("/richieste/:id");
 // DELETE RICHIESTA
 
 router.delete("/richieste/:id");
+*/
+
+
+module.exports = router;

@@ -31,3 +31,7 @@ router.put("offerte/:id");
 // DELETE OFFERTA
 
 router.delete("offerte/:id");
+
+
+
+module.exports = router;

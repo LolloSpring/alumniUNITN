@@ -33,4 +33,6 @@ router.put("/mentorships/:id");
 router.delete("/mentorships/:id");
 
 
-// 
+
+
+module.exports = router;

@@ -20,3 +20,7 @@ router.get("/login");
 router.post("/login");
 
 router.get("/logout");
+
+
+
+module.exports = router;
