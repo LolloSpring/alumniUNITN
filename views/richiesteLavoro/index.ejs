@@ -6,13 +6,15 @@
         <div class="container">
             <h1>Welcome to alumniUNITN!</h1>
             <p>Qui puoi trovare tutti gli alumni UNITN in cerca di nuove esperienze lavorative</p>
-            <p>
+            <div class="adding">
                 <a class="btn btn-primary btn-lg" href="/richiesteLavoro/new">Sei un Recruiter? Aggiungi una offerta di lavoro</a>
-            </p>
+            </div>
             <p>
                 <form action="/richieste" method="GET" class="form-inline">
                     <div class="form-group">
-                        <input type="text" name="search" placeholder="Candidati search..." class="form-control">
+                        <input type="text" name="searchCognome" placeholder="Cognome..." class="form-control">
+                        <input type="text" name="searchcorsoLaurea" placeholder="Corso di Laurea..." class="form-control">
+                        <input type="text" name="searchinteressi" placeholder="Interessi..." class="form-control">
                         <input type="submit" value="Search" class="btn btn-default">
                     </div>
                 </form>
@@ -27,8 +29,15 @@
         <% richiesteLavoro.forEach(function(richiestaLavoro){ %>
             <div class="col-md-3 col-sm-6">
                 <div class="thumbnail">
-                    <div class="caption">
+                <img src="<%= richiestaLavoro.foto%>">
+                    <div>
                         <h4> <%=richiestaLavoro.nome %> </h4>
+                    </div>
+                    <div>
+                        <h5> <%=richiestaLavoro.corsoLaurea %> </h5>
+                    </div>
+                    <div>
+                        <h6> <%=richiestaLavoro.interessi %> </h6>
                     </div>
                     <p>
                         <a href="/richiesteLavoro/<%= richiestaLavoro._id %>" class="btn btn-primary">More Info</a>    

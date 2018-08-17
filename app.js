@@ -63,7 +63,7 @@ RichiestaLavoro.create(
     {   
             nome: "Antonio",
             congome: "Ress",
-            foto: "https://www.google.it/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwi-i5Hkq_TcAhXH66QKHT8AA_AQjRx6BAgBEAU&url=https%3A%2F%2Ftwitter.com%2F_antoniomorelli&psig=AOvVaw2WeArTvnEQvaB7kWxaLBkh&ust=1534604063522514",
+            foto: "http://simonenolgo.com/wp/wp-content/themes/simonenolgo/images/profilo.jpg",
             corsoLaurea: "Fisica",
             annoLaurea: "2007",
             interessi: "Quantum Computing",
