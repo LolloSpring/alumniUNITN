@@ -1,0 +1,1 @@
+// modello per gestione in database della richiesta di lavoro

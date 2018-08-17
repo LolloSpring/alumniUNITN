@@ -7,3 +7,16 @@ router.get("/", function(req, res){
 
 
 module.exports = router;
+
+// aggiungere routes legate ad autenticazione
+
+
+router.get("/register");
+
+router.post("/register");
+
+router.get("/login");
+
+router.post("/login");
+
+router.get("/logout");

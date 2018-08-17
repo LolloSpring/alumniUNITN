@@ -1,0 +1,1 @@
+// modello per gestione in database dell'offerta di lavoro fatta dal recruiter

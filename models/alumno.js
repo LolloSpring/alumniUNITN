@@ -1,0 +1,1 @@
+// modello per gestione degli alumni-utenti dell'applicazione --> serve poi per la fase di autenticazione
