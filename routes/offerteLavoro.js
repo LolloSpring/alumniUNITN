@@ -39,14 +39,32 @@ router.get("/offerte", function(req, res){
 // NEW OFFERTA
 
 router.get("/offerte/new", function(req, res){
-	res.render("./offerte/new");
+	res.render("./offerteLavoro/new");
 });
-/*
+
 // CREATE OFFERTA
 
-router.post("/offerte");
+router.post("/offerte", upload.single('offertaLavoro[foto]'), function(req, res){
+    cloudinary.uploader.upload(req.file.path, function(result) {
+        req.body.offertaLavoro.foto = result.secure_url;
 
-
+        /*
+        req.body.mentorship.author = {
+            id: req.user._id,+
+            username: req.user.username
+        }
+        */
+        OffertaLavoro.create(req.body.offertaLavoro, function(err, offertaLavoro){
+            if (err){
+                console.log(err);
+            } else {
+                //res.redirect("/offerte" + offertaLavoro.id);
+                res.redirect("/offerte");
+            }
+        });
+    }); 
+});
+/*
 // SHOW OFFERTA
 
 router.get("/offerte/:id");

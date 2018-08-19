@@ -2,56 +2,56 @@
 
 <div class="container">
     <div class="row">
-        <h1 style="text-align: center">Diventa un nuovo Mentor per la community Alumni!</h1>
+        <h1 style="text-align: center">Trova la persona giusta tra gli alumni UNITN!</h1>
         <div style="width: 30%; margin: 25px auto;">
-            <form action="/mentorships" method="POST" enctype="multipart/form-data">
+            <form action="/offerte" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
-                    <input class="form-control" type="text" name="mentorship[nome]" placeholder="Nome">
+                    <input class="form-control" type="text" name="offertaLavoro[nome]" placeholder="Qual è il tuo nome?">
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="text" name="mentorship[cognome]" placeholder="Cognome">
+                    <input class="form-control" type="text" name="offertaLavoro[cognome]" placeholder="Qual è il tuo cognome?">
                 </div>
                 <div class="form-group">
-                    <label for="image">Foto</label>
-                    <input type="file" id="image" name="mentorship[foto]" accept="image/*" required>
+                    <label for="image">Tua foto profilo</label>
+                    <input type="file" id="image" name="offertaLavoro[foto]" accept="image/*" required>
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="text" name="mentorship[corsoLaurea]" placeholder="Corso di Laurea">
+                    <input class="form-control" type="text" name="offertaLavoro[corsoLaurea]" placeholder="In cosa ti sei laureato?">
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="text" name="mentorship[annoLaurea]" placeholder="Anno di Laurea">
+                    <input class="form-control" type="text" name="offertaLavoro[annoLaurea]" placeholder="In quale anno?">
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="text" name="mentorship[professione]" placeholder="Professione">
+                    <input class="form-control" type="text" name="offertaLavoro[professione]" placeholder="Qual è la tua professione?">
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="text" name="mentorship[azienda]" placeholder="Azienda">
+                    <input class="form-control" type="text" name="offertaLavoro[contattoMail]" placeholder="Qual è il tuo indirizzo mail?">
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="text" name="mentorship[luogo]" placeholder="Luogo">
+                    <input class="form-control" type="text" name="offertaLavoro[contattoTelegram]" placeholder="Qual è il tuo contatto Telegram?">
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="text" name="mentorship[interessi]" placeholder="Interessi">
+                    <input class="form-control" type="text" name="offertaLavoro[azienda]" placeholder="Qual è la tua azienda?">
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="text" name="mentorship[cv]" placeholder="Cv">
+                    <input class="form-control" type="text" name="offertaLavoro[fotoAzienda]" placeholder="Inserisci l'indirizzo del logo della tua azienda?">
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="text" name="mentorship[titoloTesi]" placeholder="Titolo della tesi">
+                    <input class="form-control" type="text" name="offertaLavoro[descrizionePosizione]" placeholder="Per quale posizione stai cercando tra gli alumni?">
+                </div>
+                
+                <div class="form-group">
+                    <input class="form-control" type="text" name="offertaLavoro[tipoContratto]" placeholder="Per quale tipologia di contratto?">
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="text" name="mentorship[contattoMail]" placeholder="Indirizzo mail">
+                    <input class="form-control" type="text" name="offertaLavoro[salario]" placeholder="Quanto sarà lo stipendio annuale in euro?">
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="text" name="mentorship[contattoTelegram]" placeholder="Contatto Telegram">
+                    <input class="form-control" type="text" name="offertaLavoro[periodo]" placeholder="Indicare sommariamente inizio e fine del periodo di lavoro">
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="text" name="mentorship[mezzoContattoPreferito]" placeholder="Mezzo di contatto preferito?">
+                    <input class="form-control" type="text" name="offertaLavoro[luogo]" placeholder="Dove si lavorerà?">
                 </div>
-                <div class="form-group">
-                    <input class="form-control" type="text" name="mentorship[quandoContattoPreferito]" placeholder="Quando sei disponibile?">
-                </div>
-
                 <div class="form-group">
                     <button class="btn btn-lg btn-primary btn-block">Submit!</button>
                 </div>
