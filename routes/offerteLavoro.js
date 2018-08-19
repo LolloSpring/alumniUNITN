@@ -64,12 +64,20 @@ router.post("/offerte", upload.single('offertaLavoro[foto]'), function(req, res)
         });
     }); 
 });
-/*
+
 // SHOW OFFERTA
 
-router.get("/offerte/:id");
+router.get("/offerte/:id", function(req, res){
+    OffertaLavoro.findById(req.params.id, function(err, foundOffertaLavoro){
+        if(err){
+            console.log(err);
+        } else {
+            res.render("./offerteLavoro/show", {offertaLavoro: foundOffertaLavoro})
+        }
+    })
+});
 
-
+/*
 // EDIT OFFERTA
 
 router.get("/offerte/:id/edit");

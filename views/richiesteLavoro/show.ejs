@@ -1,1 +1,33 @@
-pagina html per vedere la specifica richiesta di lavoro
+<% include ../partials/header %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <p class="lead"><%= richiestaLavoro.nome %> <%= richiestaLavoro.cognome %></p>
+            <div class="list-group">
+                
+                <li class="list-group-item">Laurea in <%= richiestaLavoro.corsoLaurea %> nel <%= richiestaLavoro.annoLaurea %></li>
+                <li class="list-group-item">Interesse per: <%= richiestaLavoro.interessi %></li>
+
+            </div>
+        </div>
+        <div class="col-mid-6">
+            <div class="thumbnail" style="padding:0;"> 
+                 <img class="img-responsive" src="<%= richiestaLavoro.foto %>">
+                 <div class="caption-full">
+                     <h4><a><%= richiestaLavoro.nome %></a>  <a><%= richiestaLavoro.cognome %></a></h4>
+                     <p class="pull-right"> Email: <%= richiestaLavoro.contattoMail %> </p>
+                     <p><a href="<%= richiestaLavoro.cv %>" target="_blank">Curriculum Vitae</a></p>
+                     <p class="pull-right"> Telegram: <%= richiestaLavoro.contattoTelegram %> </p>
+                     <p> Titolo della Tesi "<%= richiestaLavoro.titoloTesi %>"</p>
+
+                 </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+<% include ../partials/footer %>

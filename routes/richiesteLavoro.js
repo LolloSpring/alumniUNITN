@@ -68,12 +68,20 @@ router.post("/richieste", upload.single('richiestaLavoro[foto]'), function(req, 
 });
 
 
-/*
+
 // SHOW RICHIESTA
 
-router.get("/richieste/:id");
+router.get("/richieste/:id", function(req, res){
+    RichiestaLavoro.findById(req.params.id, function(err, foundRichiestaLavoro){
+        if(err){
+            console.log(err);
+        } else {
+            res.render("./richiesteLavoro/show", {richiestaLavoro: foundRichiestaLavoro})
+        }
+    })
+});
 
-
+/*
 // EDIT RICHIESTA
 
 router.get("/richieste/:id/edit");
