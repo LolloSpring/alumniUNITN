@@ -1,1 +1,51 @@
-pagina html di homepage per vedere gli annunci di mentorship
+<% include ../partials/header %>
+    
+
+<div class="container">
+    <header class="jumbotron">
+        <div class="container">
+            <h1>Welcome to alumniUNITN!</h1>
+            <p>Qui puoi trovare tutti gli alumni UNITN che offrono un'esperienza di mentorship: chiedi consigli e poni domande!!!</p>
+            <div class="adding">
+                <a class="btn btn-primary btn-lg" href="/mentorships/new">Metti a disposizione la tua esperienza: Offriti come Mentor!</a>
+            </div>
+            <p>
+                <form action="/mentorships" method="GET" class="form-inline">
+                    <div class="form-group">
+                        <input type="text" name="searchCorsoLaurea" placeholder="Corso di Laurea..." class="form-control">
+                        <input type="text" name="searchIntesse" placeholder="Interesse..." class="form-control">
+                        <input type="text" name="searchLuogo" placeholder="Luogo..." class="form-control">
+                        <input type="submit" value="Search" class="btn btn-default">
+                    </div>
+                </form>
+            </p>
+        </div>
+    </header>
+    
+    
+
+    <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+        
+        <% mentorships.forEach(function(mentorship){ %>
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail">
+                <img src="<%= mentorship.foto%>">
+                    <div>
+                        <h4> <%=mentorship.nome %> <%=mentorship.cognome %> </h4>
+                    </div>
+                    <div>
+                        <h5> <%=mentorship.descrizionePosizione %> </h5>
+                    </div>
+                    <div>
+                        <h6> <%=mentorship.azienda %> </h6>
+                    </div>
+                    <p>
+                        <a href="/mentorships/<%= mentorship._id %>" class="btn btn-primary">More Info</a>    
+                    </p>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+<% include ../partials/footer %>

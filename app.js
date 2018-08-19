@@ -45,6 +45,7 @@ app.set("view engine", "ejs");
 var authRoutes = require("./routes/index");
 var richiesteRoutes = require("./routes/richiesteLavoro");
 var offerteRoutes = require("./routes/offerteLavoro");
+var mentorshipsRoutes = require("./routes/mentorships")
 
 var RichiestaLavoro = require("./models/richiestaLavoro.js")
 var OffertaLavoro = require("./models/offertaLavoro.js")
@@ -111,10 +112,31 @@ OffertaLavoro.create(
 });
 
 
+Mentorship.create(
+  {
+          nome: "Luca",
+          cognome: "Bassetti",
+          foto: "http://larc.it/wp-content/uploads/2016/09/uomo-sorriso.jpg",
+          corsoLaurea: "Storia",
+          annoLaurea: "1986",
+          professione: "Direttore Giornale",
+          azienda: "Giornale L'Acqua",
+          luogo: "Palermo",
+          interessi: "motori, Romani",
+          cv: "https://drive.google.com/file/d/0B5C8gMU1b5HjblZOX3c2WDVDR28/view?usp=sharing",
+          titoloTesi: "Romani e la scrittura",
+          contattoMail: "bassetti@gmail.com",
+          contattoTelegram: "@bassettiMe",
+          mezzoContattoPreferito: "Telegram",
+          quantoContattoProferito: "Tra le 10 e le 20 nei finesettimana"       
+})
+
+
 
 app.use(authRoutes);
 app.use(richiesteRoutes);
 app.use(offerteRoutes);
+app.use(mentorshipsRoutes);
 
 app.listen(3000, function () {
   console.log('alumniUNITN listening on port 3000!');
