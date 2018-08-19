@@ -24,9 +24,9 @@ mongoose.connect("mongodb://lollospring:sHANGHAI95+@ds125392.mlab.com:25392/alum
 
 
 
-var url = "mongodb://localhost:27017/alumniUNITN"
+//var url = "mongodb://localhost:27017/alumniUNITN"
 
-mongoose.connect(url, {useNewUrlParser: true });
+//mongoose.connect(url, {useNewUrlParser: true });
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
