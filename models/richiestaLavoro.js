@@ -12,7 +12,16 @@ var richiestaLavoroSchema = new mongoose.Schema({
 	cv: String,
 	titoloTesi: String,
 	contattoMail: String,
-	contattoTelegram: String
+	contattoTelegram: String,
+	/*
+	author: {
+        id: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "User"
+        },
+        username: String
+    },
+    */
 });
 
 module.exports = mongoose.model("RichiestaLavoro", richiestaLavoroSchema);

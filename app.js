@@ -54,13 +54,6 @@ var Alumno = require("./models/alumno.js")
 
 
 
-
-
-
-//http://localhost:3000/
-
-
-
 RichiestaLavoro.create(
     {   
             nome: "Antonio",

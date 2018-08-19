@@ -17,7 +17,16 @@ var offertaLavoroSchema = new mongoose.Schema({
 	tipoContratto: String,
 	salario: String,
 	periodo: String,
-	luogo: String
+	luogo: String,
+	/*
+	author: {
+        id: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "User"
+        },
+        username: String
+    },
+    */
 });
 
 module.exports = mongoose.model("OffertaLavoro", offertaLavoroSchema);

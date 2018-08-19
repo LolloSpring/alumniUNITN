@@ -17,6 +17,13 @@ var mentorshipSchema = new mongoose.Schema({
 	contattoTelegram: String,
 	mezzoContattoPreferito: String,
 	quandoContattoPreferito: String
+	/*author: {
+        id: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "User"
+        },
+        username: String
+    },*/
 })
 
 module.exports = mongoose.model("Mentorship", mentorshipSchema)
