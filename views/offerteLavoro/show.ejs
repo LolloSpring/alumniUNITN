@@ -3,25 +3,24 @@
 <div class="container">
     <div class="row">
         <div class="col-md-3">
-            <p class="lead"><%= offertaLavoro.nome %> <%= offertaLavoro.cognome %></p>
+            <p class="lead"><%= offertaLavoro.nomeAzienda %> </p>
             <div class="list-group">
-                <li class="list-group-item"><%= offertaLavoro.azienda %></li>
+                <li class="list-group-item"><%= offertaLavoro.nome %> <%= offertaLavoro.cognome %></li>
                 <li class="list-group-item">Laurea in <%= offertaLavoro.corsoLaurea %> nel <%= offertaLavoro.annoLaurea %></li>
-                <li class="list-group-item">Interesse per: <%= offertaLavoro.interessi %></li>
+                <li class="list-group-item">Interesse per: <%= offertaLavoro.professione %></li>
             </div>
         </div>
         <div class="col-mid-6">
             <div class="thumbnail" style="padding:0;"> 
-                 <img class="img-responsive" src="<%= offertaLavoro.foto %>">
+                 <img class="img-responsive" src="<%= offertaLavoro.fotoAzienda %>">
                  <div class="caption-full">
-                     <h4 class="pull-right"><%= offertaLavoro.azienda %></h4>
-                     <h4><a><%= offertaLavoro.nome %></a>  <a><%= offertaLavoro.cognome %></a></h4>
+                    <h4><a><%= offertaLavoro.descrizionePosizione %></a></h4>
                      <p class="pull-right"> Email: <%= offertaLavoro.contattoMail %> </p>
-                     <p><a href="<%= offertaLavoro.cv %>" target="_blank">Curriculum Vitae</a></p>
+                     <p><%= offertaLavoro.tipoContratto %></p>
                      <p class="pull-right"> Telegram: <%= offertaLavoro.contattoTelegram %> </p>
-                     <p> Titolo della Tesi "<%= offertaLavoro.titoloTesi %>"</p>
-                     <p class="pull-right"> Quando? "<%= offertaLavoro.quandoContattoPreferito %>"</p>
-                     <p> Contattami tramite <%= offertaLavoro.mezzoContattoPreferito %></p>
+                     <p> Salario: <%= offertaLavoro.salario %> €</p>
+                     <p class="pull-right"> Luogo: <%= offertaLavoro.luogo %></p>
+                     <p> Periodo desiderato: <%= offertaLavoro.periodo %></p>
                      
                      
 
