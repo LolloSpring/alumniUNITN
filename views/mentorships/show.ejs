@@ -1,1 +1,37 @@
-pagina html per vedere lo specifico annuncio di mentorship
+<% include ../partials/header %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <p class="lead"><%= mentorship.nome %> <%= mentorship.cognome %></p>
+            <div class="list-group">
+                <li class="list-group-item"><%= mentorship.azienda %></li>
+                <li class="list-group-item">Laurea in <%= mentorship.corsoLaurea %> nel <%= mentorship.annoLaurea %></li>
+                <li class="list-group-item">Interesse per: <%= mentorship.interessi %></li>
+            </div>
+        </div>
+        <div class="col-mid-6">
+            <div class="thumbnail" style="padding:0;"> 
+                 <img class="img-responsive" src="<%= mentorship.foto %>">
+                 <div class="caption-full">
+                     <h4 class="pull-right"><%= mentorship.azienda %></h4>
+                     <h4><a><%= mentorship.nome %></a>  <a><%= mentorship.cognome %></a></h4>
+                     <p class="pull-right"> Email: <%= mentorship.contattoMail %> </p>
+                     <p><a href="<%= mentorship.cv %>" target="_blank">Curriculum Vitae</a></p>
+                     <p class="pull-right"> Telegram: <%= mentorship.contattoTelegram %> </p>
+                     <p> Titolo della Tesi "<%= mentorship.titoloTesi %>"</p>
+                     <p class="pull-right"> Quando? "<%= mentorship.quandoContattoPreferito %>"</p>
+                     <p> Contattami tramite <%= mentorship.mezzoContattoPreferito %></p>
+                     
+                     
+
+                 </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+<% include ../partials/footer %>

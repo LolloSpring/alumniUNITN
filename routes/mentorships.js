@@ -72,12 +72,20 @@ router.post("/mentorships", upload.single('mentorship[foto]'), function(req, res
 });
 
 
-/*
+
 // SHOW MENTORSHIP
 
-router.get("/mentorships/:id");
+router.get("/mentorships/:id", function(req, res){
+	Mentorship.findById(req.params.id, function(err, foundMentorship){
+		if(err){
+			console.log(err);
+		} else {
+			res.render("./mentorships/show", {mentorship: foundMentorship})
+		}
+	})
+});
 
-
+/*
 // EDIT MENTORSHIP
 
 router.get("/mentorships/:id/edit");
