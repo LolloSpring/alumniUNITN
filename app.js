@@ -9,13 +9,6 @@ var express         = require("express"),
      methodOverride = require("method-override")
 
 
-/* TOGLI COMMENTO SOLO QUANDO COMPLETATI
-var mentorshipsRoutes = require("./routes/mentorships"),
-    offerteRoutes = require("./routes/offerteLavoro"),
-    richiesteRoutes = require("./routes/richiesteLavoro"),
-    authRoutes = require("./routes/index");
-*/
-
 // DATABASE
 
 //seedDB();
@@ -46,11 +39,12 @@ var authRoutes = require("./routes/index");
 var richiesteRoutes = require("./routes/richiesteLavoro");
 var offerteRoutes = require("./routes/offerteLavoro");
 var mentorshipsRoutes = require("./routes/mentorships")
+var authRoutes = require("./routes/index");
 
 var RichiestaLavoro = require("./models/richiestaLavoro.js")
 var OffertaLavoro = require("./models/offertaLavoro.js")
 var Mentorship = require("./models/mentorship.js")
-var Alumno = require("./models/alumno.js")
+var User = require("./models/alumno.js")
 
 
 
@@ -126,21 +120,6 @@ Mentorship.create(
 
 
 
-app.use(authRoutes);
-app.use(richiesteRoutes);
-app.use(offerteRoutes);
-app.use(mentorshipsRoutes);
-
-app.listen(3000, function () {
-  console.log('alumniUNITN listening on port 3000!');
-});
-
-
-
-
-/*
-
-
 // PASSPORT CONFIGURATION
 app.use(require("express-session")({
     secret: "Once again Rusty wins cutest dog!",
@@ -155,22 +134,14 @@ passport.use(new LocalStrategy(User.authenticate()))
 passport.serializeUser(User.serializeUser())
 passport.deserializeUser(User.deserializeUser())
 
-app.use(function(req, res, next){
-   res.locals.currentUser = req.user;
-   res.locals.error = req.flash("error");
-   res.locals.success = req.flash("success");
-   next();
-});
-
-
 app.use(authRoutes);
-app.use(campgroundRoutes);
-app.use(commentsRoutes);
+app.use(richiesteRoutes);
+app.use(offerteRoutes);
+app.use(mentorshipsRoutes);
 
-app.listen(process.env.PORT, process.env.IP, function(){
-    console.log("The YelpCamp Server Has Started!");
+app.listen(3000, function () {
+  console.log('alumniUNITN listening on port 3000!');
 });
 
 
 
-*/

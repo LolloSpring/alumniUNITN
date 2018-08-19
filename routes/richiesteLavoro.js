@@ -15,12 +15,14 @@ router.get("/richieste/", function(req, res){
 	});
 });
 
-/*
+
 // NEW RICHIESTA
 
-router.get("/richieste/new");
+router.get("/richieste/new"function(req, res){
+	res.render("./richieste/new");
+});
 
-
+/*
 // CREATE RICHIESTA
 
 router.post("/richieste");
