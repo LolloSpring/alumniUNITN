@@ -8,8 +8,6 @@ router.get("/", function(req, res){
 });
 
 
-module.exports = router;
-
 // aggiungere routes legate ad autenticazione
 
 
@@ -21,9 +19,11 @@ router.post("/register", function(req, res){
 	var newUser = new User({username: req.body.username});
 	User.register(newUser, req.body.password, function(err, user){
 		if (err){
+			req.flash("error", err.message);
 			res.render("register");
 		} else {
 			passport.authenticate("local")(req, res, function(){
+				req.flash("success", "Welcome to alumniUNITN " + user.username);
 				res.redirect("/");
 			});
 		}
@@ -42,6 +42,7 @@ router.post("/login", passport.authenticate("local",
 
 router.get("/logout", function(req, res){
 	req.logout();
+	req.flash("success", "Logged you out!");
 	res.redirect("/");
 });
 
