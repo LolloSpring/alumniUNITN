@@ -18,9 +18,11 @@ var url = process.env.DATABASEURL || "mongodb://localhost:7
 /yelp_camp"
 
 mongoose.connect(url, {useNewUrlParser: true });
-//mongoose.connect("mongodb://lollospring:polifemo0@ds113452.mlab.com:13452/yelpcamp", {useNewUrlParser: true });
 
 */
+mongoose.connect("mongodb://lollospring:sHANGHAI95+@ds125392.mlab.com:25392/alumniunitn", {useNewUrlParser: true });
+
+
 
 var url = "mongodb://localhost:27017/alumniUNITN"
 
