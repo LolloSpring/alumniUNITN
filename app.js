@@ -49,7 +49,7 @@ var Mentorship = require("./models/mentorship.js")
 var User = require("./models/alumno.js")
 
 
-
+/*
 RichiestaLavoro.create(
     {   
             nome: "Antonio",
@@ -119,6 +119,7 @@ Mentorship.create(
           mezzoContattoPreferito: "Telegram",
           quantoContattoProferito: "Tra le 10 e le 20 nei finesettimana"       
 })
+*/
 
 
 
@@ -148,7 +149,7 @@ app.use(richiesteRoutes);
 app.use(offerteRoutes);
 app.use(mentorshipsRoutes);
 
-app.listen(3000, function () {
+app.listen(process.env.PORT, process.env.IP, function () {
   console.log('alumniUNITN listening on port 3000!');
 });
 
