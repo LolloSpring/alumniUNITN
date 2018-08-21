@@ -1,0 +1,291 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: "alumniUNITN"
+  description: Api of alumni UNITN, a webApp to connect UNITN students forever
+  license: 
+    name: UNITN
+    url: https://github.com/LolloSpring/alumniUNITN
+host: alumni.unitn.it
+basePath: /
+schemes:
+- http
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+  /mentorships:
+    x-summary: Mentorships Collection
+    get:
+      summary: List All Mentorships
+      responses:
+        200:
+          description: Successful Response
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Mentorship'
+          examples:
+            application/json:
+              - nome: "Luca"
+              - cognome: "Paoli"
+              - foto: "foto.jpeg"
+              - corsoLaurea: "Fisica"
+              - annoLaurea: "2009"
+              -	professione: "ricercatore"
+              -	azienda: "CERN"
+              -	luogo: "Ginevra"
+              -	interessi: "Quantum Computing"
+              -	cv: "cv@drive.com"
+              -	titoloTesi: "Le particelle in movimento quantico"
+              -	contattoMail: "paoli@cern.org"
+              -	contattoTelegram: "@paoliMe"
+              -	mezzoContattoPreferito: "Telegram"
+              -	quandoContattoPreferito: "Fine settimana"
+    post:
+      description: >-
+        You may create your own mentorship using this action. It takes a JSON
+        object containing a mentorship
+      summary: Create a New Mentorship
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/Mentorship'
+      responses:
+        201:
+          description: ''
+          schema:
+            $ref: '#/definitions/Mentorship'
+  /mentorships/{id}:
+    get:
+      description: Returns a mentorship based on a single ID, if the mentor does not have access to the pet
+      operationId: find mentorship by id
+      parameters:
+        - name: id
+          in: path
+          description: ID of mentorship to fetch
+          required: true
+          type: integer
+          format: int64
+      responses:
+        200:
+          description: mentorship response
+          schema:
+            $ref: '#/definitions/Mentorship'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /richieste:
+    x-summary: Richieste Lavoro Collection
+    get:
+      summary: List All Richieste Lavoro
+      responses:
+        200:
+          description: Successful Response
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/RichiestaLavoro'
+          examples:
+            application/json:
+              - nome: "Marina"
+              - cognome: "Paolazzi"
+              - foto: "foto.jpeg"
+              - corsoLaurea: "Filosofia"
+              - annoLaurea: "2005"
+              -	interessi: "Comunicazione, Risorse Umane"
+              -	cv: "cv@drive.com"
+              -	titoloTesi: "Le particelle in movimento quantico"
+              -	contattoMail: "paoli@cern.org"
+              -	contattoTelegram: "@paoliMe"
+    post:
+        description: >-
+          You may create your own richiesta di lavoro using this action. It takes a JSON
+          object containing a mentorship
+        summary: Create a New Richiesta Lavoro
+        parameters:
+          - name: body
+            in: body
+            required: true
+            schema:
+              $ref: '#/definitions/RichiestaLavoro'
+        responses:
+          201:
+            description: ''
+            schema:
+              $ref: '#/definitions/RichiestaLavoro'
+  /richieste/{id}:
+    get:
+      description: Returns a richiesta di lavoro based on a single ID, if the mentor does not have access to the pet
+      operationId: find richiesta di lavoro by id
+      parameters:
+        - name: id
+          in: path
+          description: ID of richiesta di lavoro to fetch
+          required: true
+          type: integer
+          format: int64
+      responses:
+        200:
+          description: richiesta di lavoro response
+          schema:
+            $ref: '#/definitions/RichiestaLavoro'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /offerte:
+    x-summary: Offerte Lavoro Collection
+    get:
+      summary: List All Offerte Lavoro
+      responses:
+        200:
+          description: Successful Response
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/OffertaLavoro'
+          examples:
+            application/json:
+              - nome: "Martina"
+              - cognome: "Colazzi"
+              - foto: "foto.jpeg"
+              - corsoLaurea: "Giurisprudenza"
+              - annoLaurea: "2012"
+              - professione: "Hr Director"
+              -	contattoMail: "colazzi@gmail.com"
+              -	contattoTelegram: "@colazziMe"
+              - nomeaAzienda: "Nastro Azzurro" 
+              - descrizionePosizione: "Sales Manager"
+              - fotoAzienda: "fotoAzienda.jpeg"
+              - tipoContratto: "tempo determinato"
+              - salario: "50000"
+              - periodo: "Luglio-Novembre 2019"
+              - luogo: "Piacenza"
+    post:
+        description: >-
+          You may create your own offerta di lavoro using this action. It takes a JSON
+          object containing a mentorship
+        summary: Create a New Offerta Lavoro
+        parameters:
+          - name: body
+            in: body
+            required: true
+            schema:
+              $ref: '#/definitions/OffertaLavoro'
+        responses:
+          201:
+            description: ''
+            schema:
+              $ref: '#/definitions/OffertaLavoro'
+  /offerte/{id}:
+    get:
+      description: Returns a offerta di lavoro based on a single ID, if the mentor does not have access to the pet
+      operationId: find offerta di lavoro by id
+      parameters:
+        - name: id
+          in: path
+          description: ID of offerta di lavoro to fetch
+          required: true
+          type: integer
+          format: int64
+      responses:
+        200:
+          description: offerta di lavoro response
+          schema:
+            $ref: '#/definitions/OffertaLavoro'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+definitions:
+  Mentorship: 
+    title: Mentorship
+    type: object
+    properties:
+      nome:
+        type: string
+      cognome:
+        type: string
+      corsoLaurea: 
+        type: string
+      annoLaurea: 
+        type: string
+      professione: 
+        type: string
+      azienda: 
+        type: string
+      luogo: 
+        type: string
+      interessi: 
+        type: string
+      cv: 
+        type: string
+      titoloTesi: 
+        type: string
+      contattoMail: 
+        type: string
+      contattoTelegram: 
+        type: string
+      mezzoContattoPreferito: 
+        type: string
+      quandoContattoPreferito: 
+        type: string
+  RichiestaLavoro: 
+    title: RichiestaLavoro
+    type: object
+    properties:
+      nome:
+        type: string
+      cognome:
+        type: string
+      corsoLaurea: 
+        type: string
+      annoLaurea: 
+        type: string
+      interessi: 
+        type: string
+      cv: 
+        type: string
+      titoloTesi: 
+        type: string
+      contattoMail: 
+        type: string
+      contattoTelegram: 
+        type: string
+  OffertaLavoro: 
+    title: OffertaLavoro
+    type: object
+    properties:
+      nome:
+        type: string
+      cognome:
+        type: string
+      corsoLaurea: 
+        type: string
+      annoLaurea: 
+        type: string
+      interessi: 
+        type: string
+      cv: 
+        type: string
+      titoloTesi: 
+        type: string
+      contattoMail: 
+        type: string
+      contattoTelegram: 
+        type: string
+  Error:
+    required:
+      - code
+      - message
+    properties:
+      code:
+        type: integer
+        format: int32
+      message:
+        type: string
